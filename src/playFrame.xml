@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program name="mainFrame"
+	 type="definedwin" 
+	 width="480" 
+	 height="385" 
+	 title="贪吃蛇" 
+	 padding_left="10">	
+	 <container width="400" height="80" name="buttonArea" 
+	 	margin_left="140" margin_top="290">
+	 		<label name="showInfor" width="150" height="20" 
+	 			margin_left="0" value="请选择进行游戏..."></label>
+	 		<button name="person" type="transparent" click="personClick"
+	 			margin_top="30" width="70" height="20" value="person"></button>
+	 		<button name="wisdom" type="transparent" click="wisdomClick"
+	 			margin_top="30" margin_left="80" width="70" height="20" value="wisdom"></button>
+	 </container>
+</program>
