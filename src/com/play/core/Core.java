@@ -3,6 +3,7 @@ import java.util.*;
 
 
 import com.play.model.Point;
+import com.play.util.WisdomUtil;
 /**
  * <b>贪吃蛇游戏逻辑核心类</b>
  * 
@@ -30,6 +31,8 @@ public class Core {
 	//窗口的大小
 	private int winWidth;
 	private int winHeight;
+	
+	private WisdomUtil wisdomUtil;
 	/**
 	 * 食点
 	 */
@@ -41,6 +44,7 @@ public class Core {
 	
 	public Core(){
 		this(100, 100, 2);
+		
 	}
 	//获取结束布尔值
 	public boolean getOver(){
@@ -68,6 +72,8 @@ public class Core {
 		map.put(LOCAT_DOWM, LOCAT_UP);
 		map.put(LOCAT_RIGTH, LOCAT_LEFT);
 		map.put(LOCAT_LEFT, LOCAT_RIGTH);
+		wisdomUtil = new WisdomUtil();
+		wisdomUtil.init(winWidth, winHeight, pWidth);
 	}
 	/**
 	 * 获取窗口的实际宽度
@@ -92,6 +98,11 @@ public class Core {
 		return this.winHeight*this.pWidth;
 	}
 	
+	public void intelligencePattern2(){
+		allowFlag = true;
+		prevLocat = wisdomUtil.wisdom(prevLocat, snake, foodPoint);
+		paintCore ();
+	}
 	/**
 	 * 智能吃子模式
 	 * <p>	 

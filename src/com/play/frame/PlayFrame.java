@@ -102,7 +102,7 @@ class WisdomThread extends Thread{
 	}
 	public void run(){
 		while(!c.getOver() && exit){
-			c.intelligencePattern();
+			c.intelligencePattern2();
 			panel.setData(c.getData());
 			show.setText("正在进行AI模式：" + c.getScore());
 			panel.repaint();

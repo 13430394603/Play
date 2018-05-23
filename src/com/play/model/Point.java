@@ -5,7 +5,7 @@ package com.play.model;
  * <br>2018年5月16日 下午4:57:37 
  * @since 1.0
  */
-public class Point{
+public class Point implements Comparable{
 	public int x;
 	public int y;
 	public Point(int x, int y){
@@ -28,5 +28,13 @@ public class Point{
 	}
 	public String toString(){
 		return "("+x+", "+y+")";
+	}
+	@Override
+	public int compareTo(Object o) {
+		if(((Point) o).x == this.x && ((Point) o).y == this.y)
+			return 1;
+		if(((Point) o).x == this.x || ((Point) o).y == this.y)
+			return 0;
+		return -1;
 	}
 }
